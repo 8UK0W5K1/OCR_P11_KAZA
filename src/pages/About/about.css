@@ -1,6 +1,27 @@
+@media all {
+  .aboutSection {
+    margin-top: 31px;
+  }
+}
+
+@media (max-width: 400px) {
+  .aboutSection {
+    margin-top: 19px;
+  }
+}
+
 .aboutPage {
   width: 86.11%;
   margin: auto;
   padding-bottom: 20px;
   margin-bottom: 20px;
+}
+
+.aboutSection li {
+  margin: 25px 0 25px 0;
+}
+
+.aboutSection ul {
+  list-style: none;
+  margin: 25px 0 25px 0;
 }

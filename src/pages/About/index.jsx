@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../../components/Banner';
 import bannerAbout from '../../assets/bannerAbout.png';
 import './about.css';
+import Dropdown from '../../components/Dropdown';
 
 /** Création de la page About
  * @return {JSX.Element}
@@ -35,13 +36,9 @@ const About = () => {
     <main>
       <Banner image={bannerAbout} type='About' />
       <section className='aboutSection'>
-        <ul>
-          {aboutSectionTexts.map(({ title, content }) => (
-            <li key={`${title}`}>
-              {title} {content}
-            </li>
-          ))}
-        </ul>
+        {aboutSectionTexts.map(({ title, content }) => (
+          <Dropdown key={`${title}`} title={title} content={content} />
+        ))}
       </section>
     </main>
   );
