@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import kasaLogo from '../../assets/logo.png';
 import About from '../../pages/About';
+import './navbar.css';
 
 /** Création navbar
  * @return {JSX.Element}

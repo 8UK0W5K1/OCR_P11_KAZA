@@ -52,20 +52,3 @@ button {
   background: none;
   border: none;
 }
-
-header {
-  display: flex;
-}
-
-.navbar__logo {
-  margin: 50px;
-}
-
-.navbar__ul {
-  margin-top: 80px;
-}
-.navbar__li {
-  padding: 50px;
-  display: inline;
-  list-style: none;
-}
