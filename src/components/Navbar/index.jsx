@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import kasaLogo from '../../assets/logo.png';
+import About from '../../pages/About';
 
 /** Création navbar
  * @return {JSX.Element}
@@ -12,10 +13,10 @@ const Navbar = () => {
       <img className='navbar__logo' src={kasaLogo} alt='Logo Kasa' />
       <nav>
         <ul className='navbar__ul'>
-          <Link to='../../pages/Home/index.jsx'>
+          <Link to='/'>
             <li className='navbar__li'>Accueil</li>
           </Link>
-          <Link to='../../pages/About/index.jsx'>
+          <Link to='/about' element={<About />}>
             <li className='navbar__li'>A propos</li>
           </Link>
         </ul>
