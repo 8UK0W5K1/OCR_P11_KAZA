@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Banner from '../../components/Banner';
+import bannerHome from '../../assets/bannerHome.png';
 /**
  * Création de la page d'accueil
  *
@@ -12,7 +13,8 @@ import React from 'react';
 const Home = ({ housingsData }) => {
   return (
     <main>
-      <div>Homepage!</div>
+      <Banner image={bannerHome} type='Home' />
+      <h1>Homepage!</h1>
     </main>
   );
 };

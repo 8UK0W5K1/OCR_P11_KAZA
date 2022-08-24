@@ -1,7 +1,14 @@
 import React from 'react';
+import Banner from '../../components/Banner';
+import bannerAbout from '../../assets/bannerAbout.png';
+import './about.css';
 
 const About = () => {
-  return <div>About page!</div>;
+  return (
+    <main>
+      <Banner image={bannerAbout} type='About' />
+    </main>
+  );
 };
 
 export default About;
