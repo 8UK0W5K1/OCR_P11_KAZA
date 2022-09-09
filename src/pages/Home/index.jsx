@@ -23,7 +23,9 @@ const Home = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`./housingsData.json`);
+        const response = await fetch(
+          `https://raw.githubusercontent.com/8UK0W5K1/OCR_P11_KAZA/main/public/data/housings.json?token=GHSAT0AAAAAABWUPTTQUMB56GANJ5IV6BEOYY3HCEA`
+        );
         const accomodationData = await response.json();
         setData(accomodationData);
         console.log(accomodationData);
