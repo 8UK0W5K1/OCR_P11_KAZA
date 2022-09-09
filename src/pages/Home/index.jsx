@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Banner from '../../components/Banner';
 import bannerHome from '../../assets/bannerHome.png';
-import Gallery from '../../Gallery';
+import Gallery from '../../components/Gallery';
 
 /**
  * Création de la page d'accueil
@@ -26,7 +26,9 @@ const Home = () => {
         const accomodationData = await response.json();
         setData(accomodationData);
         setIsLoading(false);
+        console.log('###');
         console.log(accomodationData);
+        console.log('###');
       } catch (err) {
         console.log(err);
       }
@@ -39,8 +41,12 @@ const Home = () => {
       <Banner image={bannerHome} type='Home' />
       {isloading
         ? 'Loading...'
-        : accomodationData.map((data) => <li key={data.id}>{data.title}</li>)}
-      <Gallery />
+        : accomodationData.map((data) => (
+            <li key={data.id}>
+              <img src={data.cover} alt='' /> - {data.title}
+            </li>
+          ))}
+      {/* <Gallery accomodationData={accomodationData} /> */}
     </main>
   );
 };
