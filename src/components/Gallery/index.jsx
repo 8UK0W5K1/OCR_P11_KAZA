@@ -10,8 +10,13 @@ import './gallery.css';
 const Gallery = ({ accomodationData }) => {
   return (
     <div className='gallery'>
-      {accomodationData.map(({ id, title, cover }) => (
-        <Card key={`${id}`} id={id} title={title} cover={cover} />
+      {accomodationData.map((data) => (
+        <Card
+          key={`${data.id}`}
+          id={data.id}
+          title={data.title}
+          cover={data.cover}
+        />
       ))}
     </div>
   );

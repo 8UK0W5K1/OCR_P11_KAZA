@@ -9,12 +9,12 @@ import './card.css';
  * @return {JSX.Element}
  */
 
-const Card = ({ id, title, cover }) => {
+const Card = (data) => {
   return (
-    <Link to={`/logement/${id}`}>
+    <Link to={`/logement/${data.id}`}>
       <article className='card'>
-        <img className='card__img' src={cover} alt={title} />
-        <h2 className='card__title'>{title}</h2>
+        <img className='card__img' src={data.cover} alt={data.title} />
+        <h2 className='card__title'>{data.title}</h2>
       </article>
     </Link>
   );
