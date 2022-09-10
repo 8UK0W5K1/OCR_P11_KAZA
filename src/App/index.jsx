@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Home from '../pages/Home/index';
 import About from '../pages/About';
+import AccomodationPage from '../pages/AccomodationPage';
 import Error404 from '../pages/Error404/index';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -32,6 +33,10 @@ const App = () => {
           <Route
             path='/'
             element={<Home accomodationData={accomodationData} />}
+          />
+          <Route
+            path='/logement/:accomodationId'
+            element={<AccomodationPage accomodationData={accomodationData} />}
           />
           <Route path='*' element={<Error404 />} />
           <Route path='/about' element={<About />} />
