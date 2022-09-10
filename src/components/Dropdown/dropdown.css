@@ -57,8 +57,8 @@
     z-index: 40;
   }
 
-  .dropdown__copy,
-  .dropdown__copy--fullDropdown {
+  .dropdownContent,
+  .dropdownTextContent {
     margin-top: 0;
     margin-bottom: 0;
     padding: 30px 20px;
@@ -70,7 +70,7 @@
     line-height: 142.6%;
   }
 
-  .dropdown__copy--fullDropdown {
+  .dropdownTextContent {
     font-size: 24px;
   }
 
@@ -131,8 +131,8 @@
     min-height: 144px;
   }
 
-  .dropdown__copy,
-  .dropdown__copy--fullDropdown {
+  .dropdownContent,
+  .dropdownTextContent {
     font-size: 12px;
     padding: 23px 20px;
   }

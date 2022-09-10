@@ -19,48 +19,52 @@ const AccomodationPage = ({ accomodationData }) => {
     (product) => product.id === accomodationId
   );
 
-  return window.screen.width > 600 ? (
-    <main>
-      <Carousel pictures={currentAccomodation.pictures} />
-      <AccomodationTitle
-        accomodationTitle={currentAccomodation.title}
-        accomodationLocation={currentAccomodation.location}
-      />
-
-      <div className='tagsSection'>
-        {currentAccomodation.tags.map((tags) => (
-          <Tags key={`${tags}-${currentAccomodation.id}`} tag={tags} />
-        ))}
-      </div>
-
-      <div className='ownerSection'>
-        <Rating rating={currentAccomodation.rating} />
-        <Owner
-          ownerName={currentAccomodation.host.name}
-          ownerAvatar={currentAccomodation.host.picture}
+  if (currentAccomodation !== undefined) {
+    return window.screen.width > 600 ? (
+      <main>
+        <Carousel pictures={currentAccomodation.pictures} />
+        <AccomodationTitle
+          accomodationTitle={currentAccomodation.title}
+          accomodationLocation={currentAccomodation.location}
         />
-      </div>
 
-      <div className='dropdownSection'>
-        <Dropdown
-          type='Paragraphe'
-          title='Description'
-          content={currentAccomodation.description}
-          page='Home'
-        />
-        <Dropdown
-          type='Liste'
-          title='Équipements'
-          content={currentAccomodation.equipments}
-          page='Home'
-        />
-      </div>
-    </main>
-  ) : (
-    <main>
-      <Carousel pictures={currentAccomodation.pictures} />
-    </main>
-  );
+        <div className='tagsSection'>
+          {currentAccomodation.tags.map((tags) => (
+            <Tags key={`${tags}-${currentAccomodation.id}`} tag={tags} />
+          ))}
+        </div>
+
+        <div className='ownerSection'>
+          <Rating rating={currentAccomodation.rating} />
+          <Owner
+            ownerName={currentAccomodation.host.name}
+            ownerAvatar={currentAccomodation.host.picture}
+          />
+        </div>
+
+        <div className='dropdownSection'>
+          <Dropdown
+            type='Paragraphe'
+            title='Description'
+            content={currentAccomodation.description}
+            page='Home'
+          />
+          <Dropdown
+            type='Liste'
+            title='Équipements'
+            content={currentAccomodation.equipments}
+            page='Home'
+          />
+        </div>
+      </main>
+    ) : (
+      <main>
+        <Carousel pictures={currentAccomodation.pictures} />
+      </main>
+    );
+  } else {
+    window.location = '/';
+  }
 };
 
 export default AccomodationPage;
