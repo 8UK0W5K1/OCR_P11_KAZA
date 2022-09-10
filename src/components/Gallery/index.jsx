@@ -1,5 +1,6 @@
 import React from 'react';
-// import Card from '../components/Card';
+import Card from '../Card/index';
+import './gallery.css';
 
 /** Création galerie page d'accueil
  * @param {array}  - Array logements
@@ -9,10 +10,8 @@ import React from 'react';
 const Gallery = ({ accomodationData }) => {
   return (
     <div className='gallery'>
-      {{ accomodationData }.map((data) => (
-        <li key={data.id}>
-          <img src={data.cover} alt='' /> - {data.title}
-        </li>
+      {accomodationData.map(({ id, title, cover }) => (
+        <Card key={`${id}`} id={id} title={title} cover={cover} />
       ))}
     </div>
   );

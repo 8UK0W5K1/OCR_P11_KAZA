@@ -11,9 +11,8 @@ import './card.css';
 
 const Card = ({ id, title, cover }) => {
   return (
-    <Link to={`/P11---Kasa/logement/${id}`}>
+    <Link to={`/logement/${id}`}>
       <article className='card'>
-        coucou
         <img className='card__img' src={cover} alt={title} />
         <h2 className='card__title'>{title}</h2>
       </article>
