@@ -1,41 +1,67 @@
 import React from 'react';
 import { useState } from 'react';
 import './dropdown.css';
-import arrowOpen from '../../assets/arrowOpen.png';
-import arrowClosed from '../../assets/arrowClosed.png';
+import openArrow from '../../assets/openArrow.png';
+import closedArrow from '../../assets/closedArrow.png';
 
 /** Création du Dropdown
- * @param {string} title - Titre dropdown
+ * @param {string} title - title dropdown
  * @param {string} content - Contenu dropdown
  * @param {string} page - Home OU About
  * @return {JSX.Element}
  */
 
-const Dropdown = ({ title, content }) => {
-  const [isClosed, setIsClosed] = useState(true);
-
-  return isClosed ? (
-    <div className='dropdownAbout__closed'>
+const Dropdown = ({ type, page, title, content }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return page === 'Home' ? (
+    !isOpen ? (
+      <div className='dropdown--close'>
+        <button className='dropdown__button' onClick={() => setIsOpen(true)}>
+          <p>{title}</p>
+          <img src={openArrow} alt='Ouvrir' />
+        </button>
+      </div>
+    ) : (
+      <div className='dropdown'>
+        <button className='dropdown__button' onClick={() => setIsOpen(false)}>
+          <p>{title}</p>
+          <img src={closedArrow} alt='Fermer' />
+        </button>
+        {type === 'Paragraphe' ? (
+          <div className='dropdownContent'>
+            <p className='dropdown__copy'>{content}</p>
+          </div>
+        ) : (
+          <ul className='dropdown__list'>
+            {content.map((element) => (
+              <li key={`${element}-${element.id}`}>{element}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    )
+  ) : !isOpen ? (
+    <div className='dropdown--close--fullDropdown'>
       <button
-        className='dropdownAbout__button'
-        onClick={() => setIsClosed(false)}
+        className='dropdown__button--fullDropdown'
+        onClick={() => setIsOpen(true)}
       >
         <p>{title}</p>
-        <img src={arrowOpen} alt='Ouvrir' />
+        <img src={openArrow} alt='Ouvrir' />
       </button>
     </div>
   ) : (
-    <div className='dropdownAbout__opened'>
+    <div className='dropdown--fullDropdown'>
       <button
-        className='dropdownAbout__button'
-        onClick={() => setIsClosed(true)}
+        className='dropdown__button--fullDropdown'
+        onClick={() => setIsOpen(false)}
       >
         <p>{title}</p>
-        <img src={arrowClosed} alt='fermer' />
+        <img src={closedArrow} alt='Fermer' />
       </button>
 
-      <div className='dropdown__content'>
-        <p className='dropdownAbout__textContent'>{content}</p>
+      <div className='dropdownContent'>
+        <p className='dropdownTextContent'>{content}</p>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const App = () => {
     async function fetchData() {
       try {
         const response = await fetch(
-          `https://raw.githubusercontent.com/Cecilia-Giusti/P11---Kasa/gh-pages/data/data.json`
+          `https://raw.githubusercontent.com/8UK0W5K1/OCR_P11_KAZA/main/src/data/housingsData.json`
         );
         const accomodationData = await response.json();
         setData(accomodationData);

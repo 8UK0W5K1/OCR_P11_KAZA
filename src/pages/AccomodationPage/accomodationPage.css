@@ -1,0 +1,41 @@
+@media all {
+  .descriptionSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 23px;
+  }
+
+  .tagsSection {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .dropdownSection {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .ownerSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tagsSection {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    margin-top: 10px;
+  }
+
+  .dropdownSection {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

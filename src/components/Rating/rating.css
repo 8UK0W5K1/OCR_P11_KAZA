@@ -1,0 +1,23 @@
+@media all {
+  .rating {
+    display: flex;
+    justify-content: flex-end;
+    -webkit-padding-start: 0px;
+    padding-inline-start: 0px;
+  }
+
+  .rating li {
+    list-style: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .rating {
+    width: 98px;
+    height: 18px;
+  }
+
+  .rating img {
+    width: 18px;
+  }
+}
