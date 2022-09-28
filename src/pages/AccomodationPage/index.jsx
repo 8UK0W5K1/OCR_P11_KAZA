@@ -19,7 +19,7 @@ const AccomodationPage = ({ accomodationData }) => {
     (product) => product.id === accomodationId
   );
 
-  if (currentAccomodation !== undefined) {
+  if (currentAccomodation) {
     return window.screen.width > 600 ? (
       <main>
         <Carousel pictures={currentAccomodation.pictures} />
@@ -60,10 +60,43 @@ const AccomodationPage = ({ accomodationData }) => {
     ) : (
       <main>
         <Carousel pictures={currentAccomodation.pictures} />
+        <AccomodationTitle
+          accomodationTitle={currentAccomodation.title}
+          accomodationLocation={currentAccomodation.location}
+        />
+
+        <div className='tagsSection'>
+          {currentAccomodation.tags.map((tags) => (
+            <Tags key={`${tags}-${currentAccomodation.id}`} tag={tags} />
+          ))}
+        </div>
+
+        <div className='ownerSection'>
+          <Rating rating={currentAccomodation.rating} />
+          <Owner
+            ownerName={currentAccomodation.host.name}
+            ownerAvatar={currentAccomodation.host.picture}
+          />
+        </div>
+
+        <div className='dropdownSection'>
+          <Dropdown
+            type='Paragraphe'
+            title='Description'
+            content={currentAccomodation.description}
+            page='Home'
+          />
+          <Dropdown
+            type='Liste'
+            title='Équipements'
+            content={currentAccomodation.equipments}
+            page='Home'
+          />
+        </div>
       </main>
     );
   } else {
-    window.location = '/';
+    window.location = '/error';
   }
 };
 
