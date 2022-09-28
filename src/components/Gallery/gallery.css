@@ -2,7 +2,7 @@
   .gallery {
     display: flex;
     justify-content: center;
-    gap: 60px 70px;
+    gap: 60px 150px;
     width: 100%;
     margin: auto;
     margin-top: 40px;
